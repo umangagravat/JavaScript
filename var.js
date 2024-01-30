@@ -18,8 +18,8 @@ const student = {
 console.log(student.email);
 
 //String methods
-let str ="Umang agravat        ";
-let str1 = 123;
+const str ="Umang agravat        ";
+const str1 = 123;
 
 console.log(str.toLowerCase());
 console.log(str.toUpperCase());
@@ -32,5 +32,7 @@ console.log(str.trim());
 console.log(str.repeat(4));
 console.log(str[4]);
 console.log(str.charCodeAt(4));
+console.log(str.substr(3,5));
+
 
 
