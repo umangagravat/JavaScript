@@ -31,6 +31,6 @@ console.log(str.replace("a", "A"));
 console.log(str.trim());
 console.log(str.repeat(4));
 console.log(str[4]);
-
+console.log(str.charCodeAt(4));
 
 
