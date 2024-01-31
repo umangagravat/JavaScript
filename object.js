@@ -76,12 +76,32 @@ console.log(obj);
 delete obj.emp_email; //delete is not peform in .create method
 
 //Object.keys() method
+console.log("Object.keys() method");
 const key = Object.keys(emp);
 console.log(key);
 
 //Object.values() method
+console.log("Object.values() method");
 const value = Object.values(emp);
 console.log(value);
+
+//Object.entries() method
+console.log("Object.entries() method");
+const entrie = Object.entries(emp);
+console.log(entrie);
+console.log(Object.entries(emp)[2]);
+
+//Object.freeze() method
+console.log("Object.freezea() method");
+const freez = Object.freeze(emp);
+console.log(freez);
+
+freez.emp_salary = 30000;
+console.log(freez);
+
+
+
+
 
 
 
