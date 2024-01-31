@@ -54,7 +54,7 @@ console.log(str.startsWith("agravat",6));
 console.log(str.endsWith("agravat"));
 console.log(str.endsWith("agravat",13));
 console.log(str.search("ng"));
-
+console.log(str.matchAll("man"));
 
 //Template Literals
 let index = 6;
