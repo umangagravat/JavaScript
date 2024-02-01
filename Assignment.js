@@ -97,3 +97,24 @@ console.log(candy);
 //9. Print out both "store" and "candy"
 console.log(store);
 console.log(candy);
+
+//Assignment 4
+//1. Create an object called "houseForSale" with the following properties:
+const houseForSale = {
+    "area": 940,
+    "value": 320000,
+    "streetName": "Fifth Street",
+    "built": "2012",
+    "owner":{name: "Blake", age: 29},
+    "offers": [290000, 295000, 315000, 312000]
+}
+
+// 2. Print out "houseForSale" to the terminal
+console.log(houseForSale);
+
+//3. Delete the property with the key "built"
+delete houseForSale.built;
+console.log(houseForSale);
+
+//4. Change the age of the owner to be 30 inside "houseForSale"
+
