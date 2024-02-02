@@ -17,14 +17,12 @@ myPet.color = "black";
 console.log(myPet);
 
 //4. Change "breed" to be "Beagle"
-myPet["Beagle"] = myPet["breed"];
-delete myPet.breed;
+myPet.breed = "Beagle";
 console.log(myPet);
 
 //5. Remove "Data" from the list of friends for "myPet"
-while (myPet["friends"].length) { 
-    myPet["friends"].pop(); 
-} 
+myPet.friends.pop();
+console.log(myPet);
 
 //6. Print out "myPet" to the terminal again
 console.log(myPet);

@@ -1,19 +1,25 @@
-const user ={
-    "id": 1,
-    "name": "umang",
-    "company": "isummation"
-};
 
-
-const result = [];
-const userkey = Object.keys(user);
-const uservalue = Object.values(user);
-
-for(let i=0; i<userkey.length; i++)
+//Write a JavaScript program to display the reading status (i.e. display book name, author name and reading status) of the following books.
+const library = [
     {
-        const innervalue = [];
-        innervalue.push(userkey[i]);
-        innervalue.push(uservalue[i]);
-        result.push(innervalue);
+        author: 'Bill Gates',
+        title: 'The Road Ahead',
+        readingStatus: true
+    },
+    {
+        author: 'Steve Jobs',
+        title: 'Walter Isaacson',
+        readingStatus: true
+    },
+    {
+        author: 'Suzanne Collins',
+        title:  'Mockingjay: The Final Book of The Hunger Games',
+        readingStatus: false
     }
-    console.log(result);
+ ];
+
+ for(let i=0; i<library.length; i++)
+    {
+        let status = Object.values(library[i])
+        console.log(status);
+    }

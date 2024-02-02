@@ -21,17 +21,16 @@ houseForSale.owner.age=30;
 console.log(houseForSale);
 
 //5. Print out the maximum offerPrice
-const {offers} = houseForSale;
-let max = offers[0];
-for(let i = 0; i< offers.length ; i++){
-    if (offers[i]> max){
-      max = offers[i];
+let maxOffer = 0;
+for(let i = 0; i < houseForSale.offers.length; i++) {
+    if(houseForSale.offers[i] > maxOffer) {
+        maxOffer = houseForSale.offers[i];
     }
 }
-console.log(max);
+console.log(maxOffer);
 
 //6. Add a new property: "sale price" -> 312000
-houseForSale.salePrice=312000;
+houseForSale['sale price']= 312000;
 
 
 //7. Print out "houseForSale" to the terminal

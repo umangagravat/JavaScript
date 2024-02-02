@@ -20,7 +20,7 @@ console.log(store);
 console.log(store["products"]);
 
 //5. Only print out the 3rd product object i"n "store"
-console.log(store.products[2]);
+console.log(store.products[store.products.length - 1]);
 
 //6. Change the price of the banana object through the store object to be 1.75..
 store.products[0].price = 1.75;
