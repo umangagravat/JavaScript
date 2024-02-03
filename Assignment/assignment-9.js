@@ -1,5 +1,5 @@
 const isPlayingObject = function (values) {
-    if(typeof(values) === 'object' &&  Array.isArray(values) === false)
+    if(typeof(values) === 'object' &&  !Array.isArray(values) && typeof(values) !== 'object')
         {
             return true;
         }
@@ -8,4 +8,4 @@ const isPlayingObject = function (values) {
             return false;
         }
 }
-    console.log(isPlayingObject());
+    console.log(isPlayingObject(null));
