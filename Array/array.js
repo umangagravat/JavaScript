@@ -90,7 +90,7 @@ console.log(fruit4);
 //Slice() method
 console.log("<===================slice() Method===================>");
 const slice = fruit4.slice(2);
-//const slice = fruit4.slice(1,3);
+// const slice = fruit4.slice(1,3);
 console.log(fruit4);
 console.log(slice);
 
@@ -111,6 +111,32 @@ for (let i = 0; i <= no.length - 1; i++) {
 console.log(no);
 console.log(even);
 console.log(odd);
+
+console.log("=================================================")
+const number = [1,2,3,4,5,6,7,8,9,10,11,12]
+const newarr = []
+
+for(let i=0; i<number.length; i+=2){
+    const value = number.slice(i, i+2);
+    newarr.push(value);
+}
+console.log(newarr);
+//if(value) {
+       
+    //}
+    //console.log(i, value)
+    /* const first = i;
+    const second = i + 1;
+    const value = [];
+    if(first < number.length){
+        value.push(number[first]);
+    }
+    if(second < number.length){
+        value.push(number[second]);
+    }
+    newarr.push(value); */
+
+
 
 
 
