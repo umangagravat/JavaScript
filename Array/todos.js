@@ -41050,33 +41050,82 @@ const posts = [
 // console.log(todosUser);
 
 
+// console.time();
+// users.map((user, index, array) => {
+//   delete user.company;
+//   const todosUser = todos.filter((todo, index, array) => todo.userId === user.id);
+//   user['todos'] = todosUser;
+//   const userPosts = posts.filter((post, index, array) => post.userId === user.id);
+//   user['posts'] = userPosts;
+//   const userAlbum = albums.filter((album, index, array) => album.userId === user.id);
+//   user['albums'] = userAlbum;
+//   return user;
+// })
 
-users.map((user, index, array) => {
-  delete user.company;
-  const todosUser = todos.filter((todo, index, array) => todo.userId === user.id);
-  user['todos'] = todosUser;
-  const userPhotos = photos.filter((photo, index, array) => photo.albumId === user.id);
-  user['photos'] = userPhotos;
-  const userComments = comments.filter((Comment, index, array) => Comment.postId === user.id);
-  user['posts'] = userComments;
-  return user;
-})
-console.log(users);
 
 
-albums.map((album, index, array) => {
-  const userPhotos = photos.filter((photo, index, array) => photo.albumId === album.id);
-  album['photos'] = userPhotos;
-  return album;
-})
+
+
+// albums.map((album, index, array) => {
+//   const userPhotos = photos.filter((photo, index, array) => photo.albumId === album.id);
+//   album['photos'] = userPhotos;
+//   return album;
+// })
 //console.log(albums);
 
-posts.map((post, index, array) => {
-  const userComments = comments.filter((Comment, index, array) => Comment.postId === post.id);
-  post['comments'] = userComments;
-  return post;
-})
+// posts.map((post, index, array) => {
+//   const userComments = comments.filter((Comment, index, array) => Comment.postId === post.id);
+//   post['comments'] = userComments;
+//   return post;
+// })
 //console.log(posts);
+
+
+// my code
+// const userToDo = { };
+//   for(let todo of todos){
+//     const {userId} = todo;
+//     const key = `user${userId}`;
+//     if(!key in userToDo){
+//           userToDo[key] = [];
+//     }
+//           userToDo[key] = (todo);
+//   }
+//   users.map((user) => {
+//     const key = `user${user.id}`;
+//     user['todos'] = userToDo.hasOwnProperty(key) ? userToDo[key] : [];
+//     return user;
+// })
+// console.log(users);
+
+
+//   users.map((user) => {
+//     const key = `user${user.id}`;
+//     user['todos'] = userTodo.hasOwnProperty(key) ? userTodo[key] : [];
+//     return user;
+// })
+
+
+const userTodo = {};
+ 
+for(let todo of todos) {
+    const key = `user${todo.userId}`;
+ 
+    if(!userTodo.hasOwnProperty(key)) {
+        userTodo[key] = [];
+    }
+ 
+    userTodo[key].push(todo);
+}
+ 
+users.map((user) => {
+    const key = `user${user.id}`;
+    user['todos'] = userTodo.hasOwnProperty(key) ? userTodo[key] : [];
+    return user;
+})
+
+console.log(users);
+// console.timeEnd();
 
 
 
