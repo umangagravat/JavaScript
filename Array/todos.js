@@ -41089,7 +41089,7 @@ const posts = [
 //     if(!key in userToDo){
 //           userToDo[key] = [];
 //     }
-//           userToDo[key] = (todo);
+//           userToDo[key].push(todo);
 //   }
 //   users.map((user) => {
 //     const key = `user${user.id}`;
@@ -41099,11 +41099,26 @@ const posts = [
 // console.log(users);
 
 
-//   users.map((user) => {
+
+// const userTodo = {};
+ 
+// for(let todo of todos) {
+//     const key = `user${todo.userId}`;
+ 
+//     if(!userTodo.hasOwnProperty(key)) {
+//         userTodo[key] = [];
+//     }
+//     userTodo[key].push(todo);
+// }
+ 
+// users.map((user) => {
 //     const key = `user${user.id}`;
 //     user['todos'] = userTodo.hasOwnProperty(key) ? userTodo[key] : [];
 //     return user;
 // })
+
+// console.log(users);
+// console.timeEnd();
 
 
 const userTodo = {};
@@ -41116,16 +41131,43 @@ for(let todo of todos) {
     }
  
     userTodo[key].push(todo);
-}
+};
+ 
+const photoAlbum = {};
+ 
+for(let photo of photos) {
+    const key = `user${photo.albumId}`;
+ 
+    if(!photoAlbum.hasOwnProperty(key)) {
+        photoAlbum[key] = [];
+    }
+ 
+    photoAlbum[key].push(photo);
+};
+ 
+const postComment = {};
+ 
+for(let comment of comments) {
+    const key = `user${comment.postId}`;
+ 
+    if(!postComment.hasOwnProperty(key)) {
+        postComment[key] = [];
+    }
+ 
+    postComment[key].push(comment);
+};
  
 users.map((user) => {
     const key = `user${user.id}`;
     user['todos'] = userTodo.hasOwnProperty(key) ? userTodo[key] : [];
+    user['albums'] = photoAlbum.hasOwnProperty(key) ? photoAlbum[key] : [];
+    user['posts'] = postComment.hasOwnProperty(key) ? postComment[key] : [];
     return user;
-})
-
+});
+ 
 console.log(users);
-// console.timeEnd();
+ 
+console.timeEnd();
 
 
 
