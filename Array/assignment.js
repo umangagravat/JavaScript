@@ -89,6 +89,7 @@ const totalName = characters.reduce((acc,getName,index,array) => {
 }, []);
 console.log(totalName);
 
+
 //***FILTER***
 //1. Get characters with mass greater than 100
 console.log("1. Get characters with mass greater than 100");
@@ -133,10 +134,12 @@ console.log("3. Sort by gender");
 const getSortGender = characters.sort((acc,sortGender,index,array) => acc.gender - sortGender.gender);
 console.log(getSortGender);
 
+
 //4. Sort by name
 console.log("4. Sort by name");
 const getSortName = characters.sort((acc,sortName,index,array) => (acc.name > sortName.name) ? 1 : -1);
 console.log(getSortName);
+
 
 //***EVERY***
 //1. Does every character have blue eyes?
@@ -151,7 +154,7 @@ console.log(checkBlueEyes);
 console.log("2. Does every character have mass more than 40?")
 const checkMass = characters.every((charMass,index,array) => {
     return (charMass.mass > 40) ? true : false
-})
+});
 console.log(checkMass);
 
 
@@ -159,7 +162,7 @@ console.log(checkMass);
 console.log("3. Is every character shorter than 200?");
 const checkHeight = characters.every((charHeight,index,array) => {
     return (charHeight.height < 200)? true : false
-})
+});
 console.log(checkHeight);
 
 
@@ -167,5 +170,38 @@ console.log(checkHeight);
 console.log("4. Is every character male?");
 const checkMale = characters.every((checkMale,index,array) => {
     return (checkMale.gender == 'male')? true : false
-})
+});
 console.log(checkMale);
+
+
+//***SOME***
+//1. Is there at least one male character?
+console.log("1. Is there at least one male character?");
+const leastMale = characters.some((male,index,array) => {
+        return male.gender == 'male';
+});
+console.log(leastMale)
+
+
+//2. Is there at least one character with blue eyes?
+console.log("2. Is there at least one character with blue eyes?");
+const leastEye = characters.some((eyecolor,index,array) => {
+    return eyecolor.eye_color == 'blue';
+});
+console.log(leastEye);
+
+
+//3. Is there at least one character taller than 210?
+console.log("3. Is there at least one character taller than 210?");
+const leastHeight = characters.some((charHeight,index,array) => {
+    return (charHeight.height >= 210) ? true : false
+});
+console.log(leastHeight);
+
+
+//4. Is there at least one character that has mass less than 50?
+console.log("4. Is there at least one character that has mass less than 50?");
+const leastMAss = characters.some((charMass,index,array) => {
+    return (charMass.mass <= 50) ? true : false
+});
+console.log(leastMAss);
