@@ -1,36 +1,36 @@
 const characters = [
     {
         name: 'Luke Skywalker',
-        height: '172',
-        mass: '77',
+        height: 172,
+        mass: 77,
         eye_color: 'blue',
         gender: 'male',
     },
     {
         name: 'Darth Vader',
-        height: '202',
-        mass: '136',
+        height: 202,
+        mass: 136,
         eye_color: 'yellow',
         gender: 'male',
     },
     {
         name: 'Leia Organa',
-        height: '150',
-        mass: '49',
+        height: 150,
+        mass: 49,
         eye_color: 'brown',
         gender: 'female',
     },
     {
         name: 'Anakin Skywalker',
-        height: '188',
-        mass: '84',
+        height: 188,
+        mass: 84,
         eye_color: 'blue',
         gender: 'male',
     },
 ];
 
 
-// ## MAP
+// ***MAP***
 // 1. Get an array of all names
 console.log("1. Get an array of all names");
 const charName = characters.map((getAllName,index,Array) => getAllName.name);
@@ -62,31 +62,32 @@ console.log(firstName);
 //***REDUCE***
 //1. Get total mass of all characters
 console.log("1. Get total mass of all characters");
-const charMass = characters.reduce((acc,getMass,index,array) => {
-        return acc + getMass.mass.length;    
-}, []);
+const charMass = characters.reduce( function (acc,getMass,index,array){
+        return acc + getMass.mass;    
+}, 0);
 console.log(charMass);
 
 //2. Get total height of all characters
 console.log("2. Get total height of all characters");
 const totalHeight = characters.reduce((acc,height,index,array) => {
-    return acc + height.height.length;   
-}, []);
+    return acc + height.height;   
+}, 0);
 console.log(totalHeight);
 
 
 //3. Get total number of characters by eye color
 console.log("3. Get total number of characters by eye color");
 const totalNumber = characters.reduce((acc,getNumber,index,array) => {
-    return acc + getNumber.eye_color.length;
-}, []);
+    acc[getNumber.eye_color] = (acc[getNumber.eye_color] || 0) + 1;
+    return acc;
+}, {});
 console.log(totalNumber);
 
 //4. Get total number of characters in all the character names
 console.log("4. Get total number of characters in all the character names");
-const totalName = characters.reduce((acc,getName,index,array) => {
+const totalName = characters.reduce((acc,getName,index,array) =>   {
     return acc + getName.name.length;
-}, []);
+}, 0);
 console.log(totalName);
 
 
@@ -116,8 +117,8 @@ console.log(getFemale);
 
 
 
-//***SORT***
-//1. Sort by mass
+// //***SORT***
+// //1. Sort by mass
 console.log("1. Sort by mass");
 const getSortMass = characters.sort((acc,sortMass,index,array) => acc.mass - sortMass.mass);
 console.log(getSortMass);
@@ -141,11 +142,11 @@ const getSortName = characters.sort((acc,sortName,index,array) => (acc.name > so
 console.log(getSortName);
 
 
-//***EVERY***
-//1. Does every character have blue eyes?
+// ***EVERY***
+// 1. Does every character have blue eyes?
 console.log("1. Does every character have blue eyes?")
 const checkBlueEyes = characters.every((blueEyes,index,array) => {
-    return blueEyes.eye_color == 'blue'
+    return (blueEyes.eye_color == 'blue') ? true : false
 });
 console.log(checkBlueEyes);
 
@@ -178,7 +179,7 @@ console.log(checkMale);
 //1. Is there at least one male character?
 console.log("1. Is there at least one male character?");
 const leastMale = characters.some((male,index,array) => {
-        return male.gender == 'male';
+        return (male.gender == 'male') ? true : false
 });
 console.log(leastMale)
 
@@ -186,7 +187,7 @@ console.log(leastMale)
 //2. Is there at least one character with blue eyes?
 console.log("2. Is there at least one character with blue eyes?");
 const leastEye = characters.some((eyecolor,index,array) => {
-    return eyecolor.eye_color == 'blue';
+    return (eyecolor.eye_color == 'blue') ? true : false
 });
 console.log(leastEye);
 
