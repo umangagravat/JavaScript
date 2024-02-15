@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            background-color: #d7d2d2;
+            width: 40%;
+        }
+
+        .head {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            padding-top: 20px;
+            font-size: 20px;
+        }
+
+        table {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .add {
+            text-align: center;
+            padding: 10px;
+        }
+
+        button {
+            border: none;
+            width: 100px;
+            padding: 10px;
+            background-color: lavender;
+            font-family: 'Trebuchet MS';
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input {
+            border: none;
+            width: 150px;
+            height: 25px;
+            padding-left: 10px;
+            margin-left: 15px;
+            outline: none;
+        }
+    </style>
+    <script>
+        document.write($);
+        function itemsum(priceId, qutId, totalprice) {
+            const price = parseFloat(document.getElementById(priceId).value);
+            const quantity = parseFloat(document.getElementById(qutId).value);
+            const total = price * quantity;
+            document.getElementById(totalprice).innerText = total;
+        }
+
+        function additem() {
+            additems.append('addrow');
+
+            // const row = document.getElementById(additems).innerHTML;
+            // addrow.append(row).value;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="head">
+            <h2>Invoice</h2>
+        </div>
+        <hr>
+        <div class="add">
+            <button type="button" id="add" onclick="additem()">Add Item</button>
+        </div>
+        <table id="addrow">
+            <tr id="additems">
+                <td><input type="text" id="itemId" placeholder="Item"></td>
+                <td><input type="number" id="priceId" placeholder="Price" onkeyup="itemsum('priceId', 'qutId', 'totalprice')"></td>
+                <td><input type="number" id="qutId" placeholder="Quantity" onkeyup="itemsum('qutId', 'priceId','totalprice')"></td>
+                <td style="padding-left: 10px;" id="totalprice" onkeyup="itemsum('qutId', 'priceId','totalprice')">Total</td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+
+
+</html>
