@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS DOM paragraph background style</title>
+</head>
+
+<body>
+    <p id='text'> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, deleniti voluptatem. Laudantium optio delectus commodi sapiente, culpa architecto iusto tenetur velit maiores provident repudiandae, facere nisi? Fugiat eos molestiae ullam quam odio ea voluptate similique quis error nemo sapiente dolorem neque quas, qui eaque odit cum hic impedit repudiandae enim.Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem natus nesciunt nostrum accusamus, neque iusto corporis distinctio repudiandae magnam facilis!</p>
+    <div>
+        <button id="style" onclick="jsStyle()">Style</button>
+    </div>
+    
+    <script>
+        function jsStyle(){
+            const textStyle = document.getElementById('text');
+            textStyle.style.backgroundColor = "grey";
+        }
+    </script>
+</body>
+
+</html>
