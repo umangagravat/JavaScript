@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS DOM paragraph style</title>
+</head>
+
+<body>
+    <p id='text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem natus nesciunt nostrum accusamus, neque iusto corporis distinctio repudiandae magnam facilis!</p>
+    <div>
+        <button id="style" onclick="jsStyle()">Style</button>
+    </div>
+    
+    <script>
+        function jsStyle(){
+            const textStyle = document.getElementById('text');
+            textStyle.style.color = "green";
+            textStyle.style.fontSize = "20px";
+            textStyle.style.fontFamily = 'Lucida Sans';
+        }
+    </script>
+</body>
+
+</html>
