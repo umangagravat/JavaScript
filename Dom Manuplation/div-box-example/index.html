@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Div Box Example</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="d-flex flex-row m-5">
+            <div class="d-flex flex-column" style="width: 50%;">
+                <input type="button" name="addDiv" id="addDiv" value="Add" onclick="fun_addRow()" />
+                <div class="mt-2">
+                    <div>Box</div>
+                    <div style="width: 100%; border-bottom: 2px;">&nbsp;</div>
+                    <div id="counter">0</div>
+                </div>
+            </div>
+            <div id="main-container" style="border: 1px solid gray">
+                <span>No Box Inside</span>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
