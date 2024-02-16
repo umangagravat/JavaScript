@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .box1 {
+            border: 1px solid black;
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding-top: 10px;
+        }
+
+        .box2 {
+            width: 20%;
+            border: 1px solid black;
+        }
+
+        p {
+            text-decoration: underline;
+        }
+
+        input {
+            outline: none;
+            border: none;
+            width: 15px
+            
+        }
+
+        .element {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .divBorder {
+            border: 1px solid black;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1">
+            <div class="add">
+                <button type="button" id="addElement" onclick="add()">Add</button>
+            </div>
+            <div class="countBox">
+                <p>box</p>
+                <input type="text" name="boxCount" id="boxCount" value="0">
+            </div>
+        </div>
+        <div class="box2">
+            <div class="element" id="allElement">
+                <span id="span1">No box inside</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function add() {
+            const countObj = document.getElementById('boxCount');
+            let count = +countObj.value;
+            count++;
+            countObj.value = count;
+
+            const spanValue = document.getElementById("span1");
+            if (countObj.value == 1) {
+                spanValue.remove();
+            }
+
+            const div = document.getElementById('allElement');
+            const div1 = document.createElement('div');
+            div1.setAttribute('class', "divBorder");
+            const button = document.createElement('button');
+            button.setAttribute('class', "removeElement")
+            button.setAttribute('name', `remove${count}`);
+            button.setAttribute('id', `remove${count}`);
+            button.setAttribute('onclick', "removeElement()")
+            button.innerText = "Remove";
+            div1.append(button);
+            div.append(div1);
+
+        }
+
+        function removeElement() {
+            const removeButton = document.getElementById(`remove${count}`);
+            removeButton.remove();
+
+            const countObj = document.getElementById('boxCount');
+            let count = +countObj.value;
+            count--;
+            countObj.value = count;
+        }
+    </script>
+</body>
+
+</html>
