@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Collect the value of href, hreflang, rel, target, and type attributes of a link</title>
+</head>
+
+<body>
+    <p><a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="https://www.w3resource.com/">w3resource</a></p>
+    <button onclick="getAttributes()">Click here to get the attribute's value</button>
+
+    <script>
+        function getAttributes(){
+            const id = document.getElementById('w3r').id;
+            const type = document.getElementById('w3r').type;
+            const hreflang = document.getElementById('w3r').hreflang;
+            const rel = document.getElementById('w3r').rel;
+            const target = document.getElementById('w3r').target;
+            const href = document.getElementById('w3r').href;
+
+            document.write("The value of id= " + id);
+            document.write("The value of type= " + type);
+            document.write("The value of hreflang= " + hreflang);
+            document.write("The value of rel= " + rel);
+            document.write("The value of target= " + target);
+            document.write("The value of = " + href);
+
+
+
+            
+            
+        }
+    </script>
+</body>
+
+</html>
