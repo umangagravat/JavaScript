@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Change the content of a cell</title>
+    <style type="text/css">
+        body {
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="myTable" border="1">
+        <tr>
+            <td>Row1 cell1</td>
+            <td>Row1 cell2</td>
+        </tr>
+        <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+        </tr>
+        <tr>
+            <td>Row3 cell1</td>
+            <td>Row3 cell2</td>
+        </tr>
+    </table>
+    <form>
+        <input type="button" onclick="changeContent()" value="Change content">
+    </form>
+</body>
+<script>
+
+    function changeContent(){
+        const rowNum = prompt("Input the row number", "0");
+        const columnNum = prompt("Input the column number", "0");
+        const content = prompt("Input the cell content");
+
+        const main = document.getElementById('myTable').rows[rowNum].cells[columnNum];
+        main.innerText = content;
+    }
+
+</script>
+
+</html>
