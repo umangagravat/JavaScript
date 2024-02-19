@@ -32,10 +32,11 @@
 </body>
 <script>
 
-    function changeContent(){
+    function changeContent() {
         const rowNum = prompt("Input the row number", "0");
         const columnNum = prompt("Input the column number", "0");
         const content = prompt("Input the cell content");
+
 
         const main = document.getElementById('myTable').rows[rowNum].cells[columnNum];
         main.innerText = content;
