@@ -3,6 +3,7 @@
 
 const sum_product = [1, 2, 3, 4, 5, 6]
 
+
 const sum = sum_product.reduce((sum, n) => sum + n);
 const product = sum_product.reduce((prod, n) => prod * n);
 console.log(`sum : ${sum} Product : ${product}`);
