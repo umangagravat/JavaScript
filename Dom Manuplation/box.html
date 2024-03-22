@@ -87,21 +87,29 @@
             button.setAttribute('class', "removeElement")
             button.setAttribute('name', `remove${count}`);
             button.setAttribute('id', `remove${count}`);
-            button.setAttribute('onclick', "removeElement()")
+            button.setAttribute('onclick', "removeElement(this)")
             button.innerText = "Remove";
             div1.append(button);
             div.append(div1);
 
         }
 
-        function removeElement() {
-            const removeButton = document.getElementById(`remove${count}`);
-            removeButton.remove();
+        function removeElement(obj) {
+            obj.parentElement.remove();
 
             const countObj = document.getElementById('boxCount');
             let count = +countObj.value;
             count--;
             countObj.value = count;
+
+            const spanValue = document.getElementById("span1");
+            if (countObj.value == 0) {
+                const span = document.createElement('span');
+                span.setAttribute('id', "span1");
+                span.innerText = "No box inside";
+                div.append(span);
+            }
+            
         }
     </script>
 </body>
