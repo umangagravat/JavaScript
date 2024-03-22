@@ -3,6 +3,7 @@
 // console.log(remove_non_ascii('???????PHP-MySQL??????'));
 // "PHP-MySQL"
 
+
 function remove_non_ascii(str) {
     return str.replace(/[^A-Z a-z 0-9 -]/g, '');
 };
