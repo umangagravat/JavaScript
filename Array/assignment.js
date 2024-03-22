@@ -59,8 +59,8 @@ const firstName = characters.map((fName,index,arary) =>
 );
 console.log(firstName);
 
-//***REDUCE***
-//1. Get total mass of all characters
+
+
 console.log("1. Get total mass of all characters");
 const charMass = characters.reduce( function (acc,getMass,index,array){
         return acc + getMass.mass;    
@@ -138,7 +138,7 @@ console.log(getSortGender);
 
 //4. Sort by name
 console.log("4. Sort by name");
-const getSortName = characters.sort((acc,sortName,index,array) => (acc.name > sortName.name) ? 1 : -1);
+const getSortName = characters.sort((acc,sortName,index,array) => (acc.name.localeCompare(sortName.name)));
 console.log(getSortName);
 
 
