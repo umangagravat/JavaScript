@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function showItem(obj) {
+        const value = obj.value;
+        const label = obj.nextElementSibling;
+        if(obj.checked){
+            label.innerText = value;
+            return false;
+        }
+        label.innerText = '';
+    }
+
+</script>
+
+<body>
+    
+    <input type="checkbox" class="languages" id="langJava" value="java" onclick="showItem(this)" />
+    <label for="langJava" id="java"></label><br />
+
+    <input type="checkbox" class="languages" id="langPhp" value="Php" onclick="showItem(this)" />
+    <label for="langPhp" id="php"></label><br /> 
+
+    <input type="checkbox" class="languages" id="langreact" value="React" onclick="showItem(this)" />
+    <label for="langreact" id="react"></label><br />
+
+    <input type="checkbox" class="languages" id="langnode" value="Node" onclick="showItem(this)" />
+    <label for="langnode" id="node"></label><br />
+
+    <input type="checkbox" class="languages" id="langdot" value="dotnet" onclick="showItem(this)" />
+    <label for="langdot" id="dotnet"></label><br />
+
+    <input type="checkbox" class="languages" id="langphy" value="Phython" onclick="showItem(this)" />
+    <label for="langphy" id="Phython"></label><br />
+
+</body>
+
+</html>
