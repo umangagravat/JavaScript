@@ -71,7 +71,7 @@ console.log(fruits1);
 //flat()
 console.log("<===================flat() Method===================>");
 const myArr = [[1, 2, [6, 7, [8, 9]]], [3, 4], [5, 11]];
-const newArr = myArr.flat(3);
+const newArr = myArr.flat(2);
 console.log(newArr);
 
 //splice() method
