@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            border: 2px solid black;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Lucida Sans';
+            font-weight: bold;
+        }
+
+        #boxBorder {
+            width: 150px;
+        }
+    </style>
+    <script>
+        function element() {
+            const div = document.createElement('div');
+            div.setAttribute('id', "box");
+            div.innerText = "Umang Agravat"
+            document.body.append(div);
+
+            const fieldset = document.createElement('fieldset');
+            document.body.append(fieldset);
+            const legend = document.createElement('legend');
+            legend.innerText += "Border";
+            fieldset.append(legend);
+
+            const select = document.createElement('select');
+            select.setAttribute('id', "boxBorder");
+            fieldset.append(select);
+
+            const option = document.createElement('option');
+            option.value = ' ';
+            option.innerText = 'Selcet border Color';
+            select.append(option);
+
+            const option1 = document.createElement('option');
+            option1.value = 'red';
+            option1.innerText = "Red";
+            select.append(option1);
+
+            const option2 = document.createElement('option');
+            option2.value = 'blue';
+            option2.innerText = "Blue";
+            select.append(option2);
+
+            const option3 = document.createElement('option');
+            option3.value = 'green';
+            option3.innerText = "Green";
+            select.append(option3);
+
+            const borderButton = document.createElement("button");
+            borderButton.innerText = "Set Border Color";
+            borderButton.setAttribute("onclick", "setBorderColor()")
+            fieldset.append(borderButton);
+
+            const bgColorFieldset = document.createElement('fieldset');
+            document.body.append(bgColorFieldset);
+            const bgColorLegend = document.createElement('legend');
+            bgColorLegend.innerText = "BackGround-Color";
+            bgColorFieldset.append(bgColorLegend);
+
+            const bgColorSelect = document.createElement('select');
+            bgColorSelect.setAttribute('id', "boxColor");
+            bgColorFieldset.append(bgColorSelect);
+
+            const bgoption = document.createElement('option');
+            bgoption.value = ' ';
+            bgoption.innerText = 'Select Background Color';
+            bgColorSelect.append(bgoption);
+
+            const bgoption1 = document.createElement('option');
+            bgoption1.value = 'red';
+            bgoption1.innerText = "Red";
+            bgColorSelect.append(bgoption1);
+
+            const bgoption2 = document.createElement('option');
+            bgoption2.value = 'blue';
+            bgoption2.innerText = "Blue";
+            bgColorSelect.append(bgoption2);
+
+            const bgoption3 = document.createElement('option');
+            bgoption3.value = 'green';
+            bgoption3.innerText = "Green";
+            bgColorSelect.append(bgoption3);
+
+            const bgColorButton = document.createElement("button");
+            bgColorButton.innerText = "Set Background Color"
+            bgColorButton.setAttribute("onclick", "setBackgroundColor()");
+            bgColorFieldset.append(bgColorButton);
+            
+            const textColorFieldset = document.createElement('fieldset');
+            document.body.append(textColorFieldset);
+            const textColorlegend = document.createElement('legend');
+            textColorlegend.innerText = "Text Color";
+            textColorFieldset.append(textColorlegend);
+
+            const textColorSelect = document.createElement('select');
+            textColorSelect.setAttribute("id", "textColor");
+            textColorFieldset.append(textColorSelect);
+
+            const txtoption = document.createElement('option');
+            txtoption.value = ' ';
+            txtoption.innerText = "Select text color";
+            textColorSelect.append(txtoption);
+
+            const txtoption1 = document.createElement('option');
+            txtoption1.value = 'red';
+            txtoption1.innerText = "Red";
+            textColorSelect.append(txtoption1);
+
+            const txtoption2 = document.createElement('option');
+            txtoption2.value = 'blue';
+            txtoption2.innerText = "Blue";
+            textColorSelect.append(txtoption2);
+
+            const txtoption3 = document.createElement('option');
+            txtoption3.value = 'green';
+            txtoption3.innerText = "Green";
+            textColorSelect.append(txtoption3);
+
+            const textColorButton = document.createElement("button");
+            textColorButton.innerText = "Set text Color";
+            textColorButton.setAttribute("onclick", "setTextColor()");
+            textColorFieldset.append(textColorButton);
+        }
+
+        function setBorderColor() {
+                const borderColorObj = document.getElementById('boxBorder');
+                const borderColor = borderColorObj.value;
+                if(borderColor === " ") {
+                    alert('Please select border color');
+                    borderColorObj.focus();
+                    return false;
+                }
+                const divObj = document.getElementById('box');
+                divObj.style.borderColor = borderColor;
+            }
+
+        function setBackgroundColor() {
+                const bgColorObj = document.getElementById('boxColor');
+                const bgBoxColor = bgColorObj.value;
+                if(bgBoxColor === " "){
+                    alert("Please select background color");
+                    bgColorObj.focus();
+                    return false;
+                }
+                const divObj = document.getElementById('box');
+                divObj.style.backgroundColor = bgBoxColor;
+        }
+
+        function setTextColor() {
+                const textColorObj = document.getElementById('textColor');
+                const boxTextColor = textColorObj.value;
+                if(boxTextColor === " "){
+                    alert("please select text color")
+                    textColorObj.focus();
+                    return false;
+                }
+                const divObj = document.getElementById('box');
+                divObj.style.color = boxTextColor;
+        }
+ 
+    </script>
+</head>
+
+<body onload="element()">
+
+</body>
+
+</html>
