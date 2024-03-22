@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form{
+            width: 300px;
+            background-color: rgb(101, 206, 206);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .inputName{
+            margin-top: 20px;
+            padding: 10px;
+            outline: none;
+        }
+        .button{
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<script>
+    function getAlert(){
+        console.log(document.getElementById("inputText").value);
+    }
+
+    function getvalue(){
+        document.getElementById("inputText").value = "Umang Agravat";
+    }
+  </script>
+<body>
+    <div class="form">
+        <div class="inputName">
+            <label>Name</label>
+            <input type="text" id="inputText" autocomplete="off" required>
+        </div>
+        <div class="button">
+            <button type="submit" id="getValueName" onclick="getvalue()">Set</button>
+            <button type="submit" id="getAlertName" onclick="getAlert()">Get</button>
+        </div>
+    </div>
+</body>
+</html>
